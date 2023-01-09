@@ -63,9 +63,16 @@ module.exports = {
             options: {
               name: '[name].[ext]',
               outputPath: 'images/',
+              typescript: true,
+              ext: 'tsx',
             },
           },
         ],
+      },
+      {
+        test: /\.svg$/i,
+        issuer: /\.[jt]sx?$/,
+        use: ['@svgr/webpack', 'url-loader'],
       },
     ],
   },
